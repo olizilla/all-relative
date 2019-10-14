@@ -1,12 +1,16 @@
 #!/usr/bin/env node
+const vfile = require('to-vfile')
 const findDown = require('vfile-find-down')
-const processFile = require('./process')
+const processHtml = require('./process-html')
+const processCss = require('./process-css')
 
-async function readAll (err, fileList) {
+async function process (fn, err, fileList) {
   if (err) throw err
   for (const file of fileList) {
-    await processFile(file)
+    await fn(vfile.readSync(file))
+    console.log(file.path.substring(file.cwd.length + 1))
   }
 }
 
-findDown.all('.html', readAll)
+findDown.all('.html', process.bind(null, processHtml))
+findDown.all('.css', process.bind(null, processCss))
