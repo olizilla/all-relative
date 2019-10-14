@@ -11,5 +11,5 @@ $ all-relative
 ## TODO
 
 - [x] fix urls in html
-- [ ] fix urls in css
+- [x] fix urls in css
 - [ ] fix urls in js _(ugh gross)_
