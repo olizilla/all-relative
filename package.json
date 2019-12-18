@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "olizilla",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "postcss": "^7.0.25",
     "postcss-url": "^8.0.0",
