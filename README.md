@@ -1,15 +1,33 @@
 # all-relative
 
-a work in progress command line tool to convert a static site to use only relative urls, so it can be deployed to ipfs.
+A command line tool to convert a static site to use only relative urls.
+
+Run it from the the directory which contains your generated static site to have it convert all urls in html and css to be relative to that dir.
+
+It leaves you with a portable website that doesn't care what path it is mounted at. `/`, `/olizilla/` `/ipfs/hash/`, `file://x/y/z/`, the lot, it don't care. This allows you to load the same static site via [IPFS](https://ipfs.io) or github pages, or the localfile system, as well as from the root of your custom domain. Relative urls are wonderful.
+
+The command will **edit the files in place**, so it's best to run it on generated output that you can recreate if you need to. If you can't, be sure to take a back up of your site first.
+
+✨🎷🐩
+
+## Install
+
+Install it with 
+
+```console
+$ npm install -g all-relative
+```
+
+or run just it wihtout installing it via `npx`
+
+```console
+$ npx all-relative
+```
 
 ## Usage
+
+Run the command from the root directory of your static site.
 
 ```console
 $ all-relative
 ```
-
-## TODO
-
-- [x] fix urls in html
-- [x] fix urls in css
-- [ ] fix urls in js _(ugh gross)_

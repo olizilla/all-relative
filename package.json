@@ -7,18 +7,18 @@
     "all-relative": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "say sorry && exit 1"
   },
   "keywords": [],
   "author": "olizilla",
   "license": "ISC",
   "dependencies": {
-    "postcss": "^7.0.18",
+    "postcss": "^7.0.25",
     "postcss-url": "^8.0.0",
-    "rehype-parse": "^6.0.1",
-    "rehype-stringify": "^6.0.0",
-    "rehype-url-inspector": "^1.0.2",
-    "unified": "^8.4.1",
+    "rehype-parse": "^6.0.2",
+    "rehype-stringify": "^6.0.1",
+    "rehype-url-inspector": "^1.0.4",
+    "unified": "^8.4.2",
     "url-relative": "^1.0.0",
     "vfile-find-down": "^5.0.0"
   },
