@@ -1,6 +1,6 @@
 const postcss = require('postcss')
 const url = require('postcss-url')
-const rel = require('url-relative')
+const rel = require('relative')
 const toVfile = require('to-vfile')
 
 const isAbs = /^\/[^/]/
