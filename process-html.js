@@ -5,14 +5,18 @@ const parseHtml = require('rehype-parse')
 const outputHtml = require('rehype-stringify')
 const findUrls = require('rehype-url-inspector')
 
+function relativePath (file, url = '') {
+  const relativePrefix = path.relative(file.dirname, file.cwd) || null
+  return relativePrefix ? relativePrefix + url : url[0] === '/' ? url.substr(1) : url
+}
+
 function inspectEach ({ url, node, file }) {
-  const relativePrefix = path.relative(file.dirname, file.cwd) || '.'
   if (url.match(/^\/[^/]/)) {
     if (node.properties.href) {
-      node.properties.href = relativePrefix + node.properties.href
+      node.properties.href = relativePath(file, node.properties.href)
     }
     if (node.properties.src) {
-      node.properties.src = relativePrefix + node.properties.src
+      node.properties.src = relativePath(file, node.properties.src)
     }
   }
 }
