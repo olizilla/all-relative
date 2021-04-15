@@ -11,7 +11,7 @@ function relativePath (file, url = '') {
 }
 
 function inspectEach ({ url, node, file }) {
-  if (url.match(/^\/[^/]/)) {
+  if (url === '/' || url.match(/^\/[^/]/)) {
     if (node.properties.href) {
       node.properties.href = relativePath(file, node.properties.href)
     }
