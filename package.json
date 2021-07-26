@@ -1,6 +1,6 @@
 {
   "name": "all-relative",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "a work in progress command line tool to convert a static site to use only relative urls, so it can be deployed to ipfs.",
   "main": "index.js",
   "bin": {
